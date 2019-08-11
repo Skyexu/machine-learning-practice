@@ -8,6 +8,39 @@ kaggle 链接： https://www.kaggle.com/c/titanic/overview/tutorials
 - `./data`：比赛数据
 - `./`
 
+## 比赛描述
+
+RMS泰坦尼克号沉没是历史上最臭名昭着的沉船之一。 1912年4月15日，在她的处女航中，泰坦尼克号在与冰山相撞后沉没，2224名乘客和机组人员中有1502人死亡。 这场耸人听闻的悲剧震惊了国际社会，并为船舶制定了更好的安全规定。
+
+造成海难失事的原因之一是乘客和机组人员没有足够的救生艇。 尽管人们的幸存有一些运气因素，但有些人比其他人更容易生存，例如妇女，儿童和上流社会。
+
+在这个挑战中，我们要求您完成对哪些人可能存活的分析。 特别是，我们要求您运用机器学习工具来预测哪些乘客幸免于悲剧。
+
+## 评估
+
+### 目标
+
+预测乘客是否能幸存。对于每个测试样本，预测0或1的值。
+
+### 评估指标
+
+预测准确的百分比。[accuracy](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification)，精确率。
+
+### 提交文件格式
+
+418行加上标题，2列。
+
+- PassengerId (sorted in any order)
+- Survived (contains your binary predictions: 1 for survived, 0 for deceased)
+
+```bash
+PassengerId,Survived
+ 892,0
+ 893,1
+ 894,0
+ Etc.
+```
+
 
 
 参考资料：
