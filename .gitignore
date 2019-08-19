@@ -3,3 +3,4 @@ mnist/*
 practice/Titanic/data/gender_submission.csv
 practice/Titanic/data/test.csv
 practice/Titanic/data/train.csv
+*.ipynb_checkpoints
