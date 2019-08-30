@@ -29,6 +29,6 @@ def convert(imgf, labelf, outf, n):
 
 if __name__ == '__main__':
     convert(".\Mnist\\t10k-images.idx3-ubyte", ".\Mnist\\t10k-labels.idx1-ubyte",
-            ".\Mnist\\mnist_test.csv", 10000)
-    convert(".\Mnist\\train-images.idx3-ubyte", "..\mnist\\train-labels.idx1-ubyte",
+            "..\mnist\\mnist_test.csv", 10000)
+    convert(".\Mnist\\train-images.idx3-ubyte", ".\Mnist\\train-labels.idx1-ubyte",
             "..\mnist\mnist_train.csv", 60000)

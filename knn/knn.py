@@ -28,19 +28,11 @@ import time
 
 class KNN:
 
-	def __init__(self, train_data, test_data, train_label, test_label, k=5, dist_method='eu'):
+	def __init__(self, k=5, dist_method='eu'):
 		"""
-		:param train_data: 训练数据
-		:param test_data: 测试数据
-		:param train_label: 训练数据标签
-		:param test_label: 测试数据标签
 		:param k: 近邻个数
 		:param dist_method: 距离计算方法，'eu' -- 欧式距离  'ma' 曼哈顿距离
 		"""
-		self.train_data = train_data
-		self.test_data = test_data
-		self.train_label = train_label
-		self.test_label = test_label
 		self.k = k
 		self.dist_method = dist_method
 
@@ -59,11 +51,12 @@ class KNN:
 		else:
 			raise Exception("distance method error!")
 
-	def get_knn_pre(self, train_mat, x):
+	def get_knn_pre(self, train_mat, x, train_label):
 		"""
 		计算最近邻，并返回预测类别
 		:param train_mat: 训练数据向量
 		:param x: 输入实例向量
+		:param train_label: 训练数据标签
 		:return:
 		"""
 		top_k = self.k
@@ -88,20 +81,27 @@ class KNN:
 		# 一个列表存储， 10 个类别的计数
 		label_count = [0] * 10
 		for n in top_k_list:
-			label_count[self.train_label[n]] += 1
+			label_count[train_label[n]] += 1
 
 		# 列表中最大值的索引即为预测的类别
 		return label_count.index(max(label_count))
 
-	def test(self):
-		train_mat = np.mat(self.train_data)
-		test_mat = np.mat(self.test_data)
+	def test(self, train_data, test_data, train_label, test_label,):
+		"""
+		:param train_data: 训练数据
+		:param test_data: 测试数据
+		:param train_label: 训练数据标签
+		:param test_label: 测试数据标签
+		:return:
+		"""
+		train_mat = np.mat(train_data)
+		test_mat = np.mat(test_data)
 
 		error_cnt = 0
 		# 预测 100 组数据
 		for k in range(100):
-			y = self.get_knn_pre(train_mat, test_mat[k])
-			if y != self.test_label[k]:
+			y = self.get_knn_pre(train_mat, test_mat[k], train_label)
+			if y != test_label[k]:
 				error_cnt += 1
 		# 正确率 = 1 - 错误分类样本数 / 总样本数
 		print('accuracy: ', 1 - error_cnt / 100)
@@ -134,9 +134,9 @@ if __name__ == '__main__':
 	train_data, train_label = load_data(train_path)
 	test_data, test_label = load_data(test_path)
 	start = time.time()
-	knn = KNN(train_data, test_data, train_label, test_label, 20, 'eu')
+	knn = KNN(20, 'eu')
 	# 测试
-	knn.test()
+	knn.test(train_data, test_data, train_label, test_label)
 
 	end = time.time()
 	# 程序运行时长

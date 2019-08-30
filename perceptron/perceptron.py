@@ -10,6 +10,12 @@ Train：60000
 test：10000
 
 特征为 0~255 之间的数，标签为 0~9
+
+alpha=0.0001, iter_n=30
+
+accuracy:  0.8172
+running time : 20.67824387550354
+
 """
 import numpy as np
 import time
@@ -17,26 +23,23 @@ import time
 
 class Perceptron:
 
-	def __init__(self, train_data, test_data, train_label, test_label, alpha=0.0001, iter_n=20):
+	def __init__(self, alpha=0.0001, iter_n=20):
 		"""
-		:param train_data: 训练数据
-		:param test_data: 测试数据
-		:param train_label: 训练数据标签
-		:param test_label: 测试数据标签
 		:param alpha: 步长
 		:param iter: 迭代次数
 		"""
-		self.train_data = train_data
-		self.test_data = test_data
-		self.train_label = train_label
-		self.test_label = test_label
 		self.alpha = alpha
 		self.iter_n = iter_n
 		self.w = None
 		self.b = 0
 
-	def fit(self):
-		train_mat = np.mat(self.train_data)
+	def fit(self, train_data, train_label):
+		"""
+		:param train_data: 训练数据
+		:param train_label: 训练数据标签
+		:return:
+		"""
+		train_mat = np.mat(train_data)
 		# m 为样本数，n 为特征维数
 		m, n = train_mat.shape
 		# 初始化权重向量为 0，偏置 b 为 0
@@ -45,7 +48,7 @@ class Perceptron:
 		# 迭代次数
 		for k in range(self.iter_n):
 			for i in range(m):
-				y_i = self.train_label[i]
+				y_i = train_label[i]
 				x_i = train_mat[i]
 				# 判断是否为误分类样本 yi(w*xi+b) <= 0
 				if y_i * (np.inner(x_i, w) + b) <= 0:
@@ -56,13 +59,18 @@ class Perceptron:
 		self.w = w
 		self.b = b
 
-	def test(self):
-		test_mat = np.mat(self.test_data)
+	def test(self, test_data, test_label):
+		"""
+		:param test_data: 测试数据
+		:param test_label: 测试数据标签
+		:return:
+		"""
+		test_mat = np.mat(test_data)
 		m, n = test_mat.shape
 		error_cnt = 0
 		for k in range(m):
 			# 计算 yi(w*xi+b), 记录误分类数
-			if self.test_label[k] * (np.inner(self.w, test_mat[k]) + self.b) <= 0:
+			if test_label[k] * (np.inner(self.w, test_mat[k]) + self.b) <= 0:
 				error_cnt += 1
 		# 正确率 = 1 - 错误分类样本数 / 总样本数
 		print('accuracy: ', 1 - error_cnt / m)
@@ -112,11 +120,11 @@ if __name__ == '__main__':
 	train_data, train_label = load_data(train_path)
 	test_data, test_label = load_data(test_path)
 	start = time.time()
-	per = Perceptron(train_data, test_data, train_label, test_label, 0.001, 30)
+	per = Perceptron(alpha=0.0001, iter_n=30)
 	# 训练
-	per.fit()
+	per.fit(train_data, train_label)
 	# 测试
-	per.test()
+	per.test(test_data, test_label)
 	end = time.time()
 	# 程序运行时长
 	print('running time :', end - start)
