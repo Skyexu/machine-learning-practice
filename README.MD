@@ -21,7 +21,7 @@ nb = NaiveBayes(var_smoothing=1)
 # 训练
 nb.fit(train_data, train_label)
 # 测试
-nb.test(test_data, test_label)
+nb.score(test_data, test_label)
 ```
 
 

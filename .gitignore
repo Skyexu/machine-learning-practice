@@ -3,4 +3,7 @@ mnist/*
 practice/Titanic/data/gender_submission.csv
 practice/Titanic/data/test.csv
 practice/Titanic/data/train.csv
+data/Titanic/gender_submission.csv
+data/Titanic/test.csv
+data/Titanic/train.csv
 *.ipynb_checkpoints
