@@ -36,6 +36,13 @@ class Node:
         }
 
     def __repr__(self):
+        """
+        重写 __repr__ 用于显示对象，也可以 使用 __str__
+        dt = Node()
+        print(dt) 就可以显示自己定义的信息了
+        这里  self.result 中包含 self.tree，所以会递归显示所有子树信息
+        :return:
+        """
         return '{}'.format(self.result)
 
     def add_node(self, val, node):
