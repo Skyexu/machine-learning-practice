@@ -86,7 +86,7 @@ class KNN:
 		# 列表中最大值的索引即为预测的类别
 		return label_count.index(max(label_count))
 
-	def test(self, train_data, test_data, train_label, test_label,):
+	def score(self, train_data, test_data, train_label, test_label,):
 		"""
 		:param train_data: 训练数据
 		:param test_data: 测试数据
@@ -136,7 +136,7 @@ if __name__ == '__main__':
 	start = time.time()
 	knn = KNN(20, 'eu')
 	# 测试
-	knn.test(train_data, test_data, train_label, test_label)
+	knn.score(train_data, test_data, train_label, test_label)
 
 	end = time.time()
 	# 程序运行时长
