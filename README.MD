@@ -32,6 +32,14 @@ nb.score(test_data, test_label)
 - [x] 感知机： `Perceptron`
 - [x] 朴素贝叶斯：`NaiveBayes`
 
+- [x] 决策树：`DicisionTree`
+- [ ] 逻辑斯谛回归：`LogisticRegression`
+
+参考：
+
+- https://github.com/Dod-o/Statistical-Learning-Method_Code
+- 
+
 
 
 ## 比赛实践与学习
@@ -40,4 +48,3 @@ nb.score(test_data, test_label)
 
 
 
-参考：https://github.com/Dod-o/Statistical-Learning-Method_Code
