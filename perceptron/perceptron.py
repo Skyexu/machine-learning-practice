@@ -59,7 +59,7 @@ class Perceptron:
 		self.w = w
 		self.b = b
 
-	def test(self, test_data, test_label):
+	def score(self, test_data, test_label):
 		"""
 		:param test_data: 测试数据
 		:param test_label: 测试数据标签
@@ -124,7 +124,7 @@ if __name__ == '__main__':
 	# 训练
 	per.fit(train_data, train_label)
 	# 测试
-	per.test(test_data, test_label)
+	per.score(test_data, test_label)
 	end = time.time()
 	# 程序运行时长
 	print('running time :', end - start)

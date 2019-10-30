@@ -33,7 +33,7 @@ nb.score(test_data, test_label)
 - [x] 朴素贝叶斯：`NaiveBayes`
 
 - [x] 决策树：`DicisionTree`
-- [ ] 逻辑斯谛回归：`LogisticRegression`
+- [x] 逻辑斯谛回归：`LogisticRegression`
 
 参考：
 
