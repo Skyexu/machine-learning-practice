@@ -7,3 +7,5 @@ data/Titanic/gender_submission.csv
 data/Titanic/test.csv
 data/Titanic/train.csv
 *.ipynb_checkpoints
+data/feature_engineering/*
+!data/feature_engineering/README.md
