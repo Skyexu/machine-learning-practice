@@ -12,3 +12,4 @@
 
 
 
+![deep_learning_mind_map](dl_map.png)
