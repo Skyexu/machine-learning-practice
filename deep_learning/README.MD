@@ -16,7 +16,7 @@
 
 **目录**
 
-- [x] 线性回归（[md](./articles/1. 线性回归.md)，[ipynb](./articles/1. 线性回归.ipynb)）
+- [x] 线性回归（[md](https://github.com/Skyexu/machine-learning-practice/blob/master/deep_learning/articles/1. 线性回归.md)，[ipynb](https://github.com/Skyexu/machine-learning-practice/blob/master/deep_learning/articles/1. 线性回归.ipynb)）
 
 - [x] Softmax 回归与分类模型（[md](./articles/2. Softmax 与分类模型.m)，[ipynb](./articles/2. Softmax 与分类模型.ipynb)）
 
