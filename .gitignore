@@ -9,3 +9,4 @@ data/Titanic/train.csv
 *.ipynb_checkpoints
 data/feature_engineering/*
 !data/feature_engineering/README.md
+practice/FinancialRiskControl/data/*
