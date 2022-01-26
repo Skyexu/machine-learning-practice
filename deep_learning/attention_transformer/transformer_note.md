@@ -23,3 +23,22 @@ Self Attention，指的不是Target和Source之间的Attention机制，而是Sou
 
 
 
+
+
+参考资料
+
+tf 官方文档：https://www.tensorflow.org/text/tutorials/transformer#training_and_checkpointing
+
+官方文档翻译优化：
+
+https://blog.csdn.net/qq_36758914/article/details/105465817
+
+https://erickun.com/2020/04/11/Transformer-%E5%8E%9F%E7%90%86-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E6%80%BB%E7%BB%93-Tensorflow%E5%AE%98%E6%96%B9%E6%BA%90%E7%A0%81/
+
+
+
+transformer 理解：https://luweikxy.github.io/machine-learning-notes/#/natural-language-processing/self-attention-and-transformer/attention-is-all-you-need/attention-is-all-you-need?id=decoder%e7%9a%84mask-multi-head-attention%e8%be%93%e5%85%a5%e7%ab%af
+
+
+
+https://blog.csdn.net/wuzhongqiang/article/details/104414239?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161512240816780357259240%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=161512240816780357259240&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v1~rank_blog_v1-1-104414239.pc_v1_rank_blog_v1&utm_term=Attention+is+all
